@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>Map Age</title>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="changes.js"></script>
+
+        <style>
+            body{
+                margin:0;
+                color: #333;
+                font-style: normal;
+                font-family: "Myriad Set Pro","Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
+            }
+            #map { height: 100%; }
+            #question{
+                position: fixed;
+                bottom:0;
+                width:100vw;
+                height:30vh;
+                margin: 0 auto;
+                padding: 20px;
+
+                text-align:center;
+                background-color:lightgray;
+                font-size: 2em;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+        <div id="question">
+            <p>What country is this?</p>
+            <button id='newCountry'></button>
+            <button id='oldCountry'></button>
+        </div>
+        <script>
+            //initialize map
+            var map = L.map('map').setView([0,0], 2);
+            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            var midpoint = 0;
+            var currentSpot;
+            var potentialDate = "";
+            var currentMarker;
+
+            updatePoint(true);
+
+            $("#newCountry").click(function(){
+                updatePoint(false);
+            });
+            $("#oldCountry").click(function(){
+                updatePoint(true);
+            });
+
+            function updatePoint(useUpperRange){
+                if(useUpperRange){
+                    midpoint = midpoint + Math.floor(locations.length/2);
+                }else{
+                    midpoint = Math.floor(midpoint/2);
+                }
+
+                if(currentSpot){
+                    potentialDate = currentSpot.dateofchange;
+                }
+                currentSpot = locations[midpoint];
+
+                $("#newCountry").html(currentSpot.newname);
+                $("#oldCountry").html(currentSpot.formername);
+                map.panTo([currentSpot.lat, currentSpot.long]);
+                if(currentMarker){
+                    map.removeLayer(currentMarker);
+                }
+                currentMarker = new L.marker([currentSpot.lat, currentSpot.long]).addTo(map);
+            }
+
+        </script>
+    </body>
+</html>
