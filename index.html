@@ -43,7 +43,7 @@
                 attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
 
-            var midpoint = 0;
+            var midpoint = Math.floor(changes.length/2);
             var currentSpot;
             var potentialDate = "";
             var currentMarker;
@@ -59,15 +59,16 @@
 
             function updatePoint(useUpperRange){
                 if(useUpperRange){
-                    midpoint = midpoint + Math.floor(locations.length/2);
+                    //midpoint = midpoint + Math.floor(locations.length/2);
+                    midpoint--;
                 }else{
-                    midpoint = Math.floor(midpoint/2);
+                    //midpoint = Math.floor(midpoint/2);
+                    midpoint++;
                 }
-
                 if(currentSpot){
                     potentialDate = currentSpot.dateofchange;
                 }
-                currentSpot = locations[midpoint];
+                currentSpot = changes[midpoint];
 
                 $("#newCountry").html(currentSpot.newname);
                 $("#oldCountry").html(currentSpot.formername);

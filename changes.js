@@ -29,7 +29,8 @@ var changes = [
     "formername": "Zaire *",
     "location": "Central Africa",
     "lat":-0.813079,
-    "long":23.332549
+    "long":23.332549,
+    "questionable": true
   },
   {
     "newname": "Czech Republic",
@@ -44,7 +45,7 @@ var changes = [
     "dateofchange": "1992",
     "formername": "Yugoslavia",
     "location": "E. of Italy",
-    "lat":44.163583, 
+    "lat":44.163583,
     "long":17.839968
   },
   {
@@ -52,7 +53,7 @@ var changes = [
     "dateofchange": "1991",
     "formername": "Russian S.S.R.",
     "location": "northern Europe/Asia",
-    "lat":55.775601, 
+    "lat":55.775601,
     "long":38.487790
   },
   {
@@ -60,7 +61,7 @@ var changes = [
     "dateofchange": "1990",
     "formername": "East Germany, West Germany unify",
     "location": "northern Europe",
-    "lat":51.181680, 
+    "lat":51.181680,
     "long":8.275495
   },
   {
@@ -68,7 +69,7 @@ var changes = [
     "dateofchange": "1986",
     "formername": "Marshall Islands (U.S.)",
     "location": "Pacific, N. of Equator, near Intern.Dateline",
-    "lat":7.238818, 
+    "lat":7.238818,
     "long":168.997057
   },
   {
@@ -76,7 +77,7 @@ var changes = [
     "dateofchange": "1983",
     "formername": "Leeward Is. (Br.)",
     "location": "isles in W. Indies, above Venezuela",
-    "lat":17.244067, 
+    "lat":17.244067,
     "long":-62.706437
   },
   {
@@ -84,7 +85,7 @@ var changes = [
     "dateofchange": "1981",
     "formername": "British Honduras",
     "location": "S. of Yucatan, E. of Guatemala",
-    "lat":17.160586, 
+    "lat":17.160586,
     "long":-88.469164
   },
   {
@@ -92,7 +93,7 @@ var changes = [
     "dateofchange": "1980",
     "formername": "Rhodesia",
     "location": "SE. Africa",
-    "lat": -19.221214, 
+    "lat": -19.221214,
     "long":29.930290
   },
   {
@@ -100,7 +101,7 @@ var changes = [
     "dateofchange": "1979",
     "formername": "Gilbert Is. &amp; Phoenix Is. (Br.)",
     "location": "Pacific Ocean at the Equator",
-    "lat": 1.846893, 
+    "lat": 1.846893,
     "long":-157.380367
   },
   {
@@ -108,7 +109,7 @@ var changes = [
     "dateofchange": "1978",
     "formername": "Ellice Is. (Br.)",
     "location": "S. Pacific, W. of Intern.Dateline",
-    "lat": -8.139274, 
+    "lat": -8.139274,
     "long":178.980621
   },
   {
@@ -116,15 +117,15 @@ var changes = [
     "dateofchange": "1977",
     "formername": "French Somaliland",
     "location": "S. end of Red Sea, across Yemen",
-    "lat": 11.842222, 
+    "lat": 11.842222,
     "long":42.569721
   },
   {
     "newname": "Vietnam",
     "dateofchange": "1976",
-    "formername": "North &amp; South Vietnam unify",
+    "formername": "North or South Vietnam",
     "location": "S. of China",
-    "lat": 13.633092, 
+    "lat": 13.633092,
     "long":108.406907
   },
   {
@@ -140,7 +141,7 @@ var changes = [
     "dateofchange": "1974",
     "formername": "Portuguese Guinea",
     "location": "W. African  coast",
-    "lat": 11.875549, 
+    "lat": 11.875549,
     "long":-15.041501
   },
   {
@@ -148,639 +149,211 @@ var changes = [
     "dateofchange": "1973",
     "formername": "Bahama Island (British)",
     "location": "off SE. coast of Florida",
-    "lat": 24.661035, 
+    "lat": 24.661035,
     "long":-77.088566
   },
   {
     "newname": "Bangladesh",
     "dateofchange": "1972",
-    "formername": "India (part)",
+    "formername": "India",
     "location": "betw. India and Burma",
-    "lat": 
-    "long":
+    "lat": 23.806794,
+    "long":90.176963
   },
   {
     "newname": "Qatar",
     "dateofchange": "1971",
-    "formername": "Hadhramaut, Aden Br. Protectorate (part)",
+    "formername": "Hadhramaut, Aden British Protectorate",
     "location": "betw. Saudi Arabia &amp; Persian Gulf",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "United Arab Emirates",
-    "dateofchange": "1971",
-    "formername": "Oman (part)",
-    "location": "betw. Saudi Arabia &amp; Persian Gulf",
-    "lat": 
-    "long":
+    "lat": 25.446953,
+    "long":51.201430
   },
   {
     "newname": "Zaire",
     "dateofchange": "1971",
     "formername": "Congo, Dem. Repub. Of",
     "location": "central Africa, straddles Equator",
-    "lat": 
-    "long":
+    "lat":-1.721158,
+    "long":24.224296,
+    'questionable':true
   },
   {
     "newname": "Fiji",
     "dateofchange": "1970",
     "formername": "Fiji Is. (Br.)",
     "location": "S. Pacific, W. of Intern.Dateline",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Tonga",
-    "dateofchange": "1970",
-    "formername": "Tonga Is. (Br.)",
-    "location": "S. Pacific, W. of Intern.Dateline",
-    "lat": 
-    "long":
+    "lat": -17.845575,
+    "long":177.874353
   },
   {
     "newname": "Equatorial Guinea",
     "dateofchange": "1968",
     "formername": "Fernado Po, Rio Muni (Spanish Guinea)",
     "location": "W. coast of Africa at the Equator",
-    "lat": 
-    "long":
+    "lat": 1.497473,
+    "long":9.775832
   },
   {
-    "newname": "Mauritius",
-    "dateofchange": "1968",
-    "formername": "Mauritius (Br.)",
-    "location": "E. of Madagascar, in Indian Ocean",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Nauru",
-    "dateofchange": "1968",
-    "formername": "Nauru (Br.)",
-    "location": "Pacific, near Equator, W. of Intern.Dateline",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Yemen, South",
+    "newname": "South Yemen",
     "dateofchange": "1967",
-    "formername": "Hadhramaut or Aden Br. Protectorate",
+    "formername": "Hadhramaut or Aden British Protectorate",
     "location": "S. end of Red Sea",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Barbados",
-    "dateofchange": "1966",
-    "formername": "Barbados (Br.)",
-    "location": "isle in W. Indies, above Venezuela",
-    "lat": 
-    "long":
+    "lat": 15.139947,
+    "long":47.380535,
+    "questionable":true
   },
   {
     "newname": "Botswana",
     "dateofchange": "1966",
     "formername": "Bechuanaland",
     "location": "S. central Africa",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Guyana",
-    "dateofchange": "1966",
-    "formername": "Br. Guyana (or Guiana)",
-    "location": "northern So. America",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Lesotho",
-    "dateofchange": "1966",
-    "formername": "Basutoland",
-    "location": "S. Africa",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Maldives",
-    "dateofchange": "1965",
-    "formername": "Maldive Islands",
-    "location": "isle group SW. of India",
-    "lat": 
-    "long":
+    "lat": -21.522635,
+    "long":24.048943
   },
   {
     "newname": "Rhodesia",
     "dateofchange": "1965",
     "formername": "Southern Rhodesia",
     "location": "SE. Africa",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Malawi",
-    "dateofchange": "1964",
-    "formername": "Nyasaland",
-    "location": "SE. Africa",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Malta",
-    "dateofchange": "1964",
-    "formername": "Malta (Br.)",
-    "location": "S. of Sicily, in Mediterranean Sea",
-    "lat": 
-    "long":
+    "lat": -20.782197,
+    "long":30.355025
   },
   {
     "newname": "Tanzania",
     "dateofchange": "1964",
-    "formername": "Tanganyika, Zanzibar unify",
+    "formername": "Tanganyika and Zanzibar",
     "location": "E. Africa, S. of Equator",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Zambia",
-    "dateofchange": "1964",
-    "formername": "Northern Rhodesia",
-    "location": "S. central Africa",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Algeria",
-    "dateofchange": "1962",
-    "formername": "French West Africa (part), Algeria",
-    "location": "NW Africa",
-    "lat": 
-    "long":
+    "lat":-5.431569,
+    "long":38.515179
   },
   {
     "newname": "Burundi",
     "dateofchange": "1962",
     "formername": "Belgian Congo",
     "location": "central Africa, S. of Equator",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Jamaica",
-    "dateofchange": "1962",
-    "formername": "Jamaica (Br.)",
-    "location": "isle S. of Cuba",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Rwanda",
-    "dateofchange": "1962",
-    "formername": "Belgian Congo (part), Ruanda",
-    "location": "central Africa, S. of Equator",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Tobago (See Trinidad &amp; Tobago)",
-    "dateofchange": "1962",
-    "formername": "&nbsp;",
-    "location": "&nbsp;",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Trinidad &amp; Tobago",
-    "dateofchange": "1962",
-    "formername": "Trinidad (Br.)<br>Tobago (Br.)",
-    "location": "isles in W. Indies, above Venezuela",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Western Samoa",
-    "dateofchange": "1962",
-    "formername": "Samoa Is. (N.Z.)",
-    "location": "S. Pacific, at Intern.Dateline",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Egypt *",
-    "dateofchange": "1961",
-    "formername": "Egypt (U.A.R.)",
-    "location": "SE. end of Mediterranean Sea",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Syria *",
-    "dateofchange": "1961",
-    "formername": "Syria (U.A.R.)",
-    "location": "E. end of Mediterranean Sea",
-    "lat": 
-    "long":
+    "lat": -3.452748,
+    "long":29.822781
   },
   {
     "newname": "Tanganyika",
     "dateofchange": "1961",
     "formername": "Tanganyika Territory",
     "location": "E. Africa, S. of Equator",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Benin",
-    "dateofchange": "1960",
-    "formername": "French West Africa (part), Dahomey (part)",
-    "location": "W. Africa, near Equator",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Burkina",
-    "dateofchange": "1960",
-    "formername": "French West Africa (part) Upper Volta",
-    "location": "W. Africa, near Equator",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Cameroon",
-    "dateofchange": "1960",
-    "formername": "French Equatorial Africa (part), Cameroon",
-    "location": "W. Africa, near Equator",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Central African Republic",
-    "dateofchange": "1960",
-    "formername": "French Equatorial Africa (part), Oubangi, Chari",
-    "location": "central Africa, N of Equator",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Chad",
-    "dateofchange": "1960",
-    "formername": "French Equatorial Africa (part), Chad",
-    "location": "central Africa, N. of Equator",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Congo, Dem. Repub. Of *",
-    "dateofchange": "1960",
-    "formername": "Belgian Congo (part)",
-    "location": "central Afr. straddles Equator",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Congo, People's Repub.",
-    "dateofchange": "1960",
-    "formername": "French Equatorial Africa (part), Gabon (part)",
-    "location": "central Afr., straddles Equator",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Cyprus",
-    "dateofchange": "1960",
-    "formername": "Cyprus (Br.)",
-    "location": "S. of Turkey in Mediterranean",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Gabon",
-    "dateofchange": "1960",
-    "formername": "French Equatorial Africa (part), Gabon",
-    "location": "W. Africa, S. of Equator",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Cote D'Ivoire (Ivory Coast)",
-    "dateofchange": "1960",
-    "formername": "French West Africa, Ivory Coast",
-    "location": "W. Africa, N. of Equator",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Mali",
-    "dateofchange": "1960",
-    "formername": "French West Africa (part), French Sudan",
-    "location": "NW. Africa",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Mauritania",
-    "dateofchange": "1960",
-    "formername": "French West Africa (part), Mauritania",
-    "location": "far W. Africa",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Niger",
-    "dateofchange": "1960",
-    "formername": "French West Africa (part), Niger",
-    "location": "N. central Africa",
-    "lat": 
-    "long":
+    "lat": -8.229874,
+    "long":35.089416
   },
   {
     "newname": "Senegal",
     "dateofchange": "1960",
     "formername": "French West Africa (part)",
     "location": "W. African coast",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Somalia",
-    "dateofchange": "1960",
-    "formername": "Italian, British Somaliland unify",
-    "location": "far E. (Horn of) Africa",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Togo",
-    "dateofchange": "1960",
-    "formername": "French West Africa (part), Dahomey (part)",
-    "location": "W. Africa, N. of Equator",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Egypt U.A.R. (United Arab Republic)",
-    "dateofchange": "1958",
-    "formername": "Egypt * ",
-    "location": "SE. end of Mediterranean Sea",
-    "lat": 
-    "long":
+    "lat": 14.618691,
+    "long":-14.580922
   },
   {
     "newname": "Guinea",
     "dateofchange": "1958",
-    "formername": "Fr. Guinea",
+    "formername": "French Guinea",
     "location": "W. Africa, N. of Equator",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Syria U.A.R. (United Arab Republic)",
-    "dateofchange": "1958",
-    "formername": "Syria * ",
-    "location": "E. end of Mediterranean Sea",
-    "lat": 
-    "long":
+    "lat": 10.979208,
+    "long":-10.737661
   },
   {
     "newname": "Ghana",
     "dateofchange": "1957",
     "formername": "Ashanti and/or Gold Coast",
     "location": "W. Africa, N. of Equator ",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Malaysia",
-    "dateofchange": "1957",
-    "formername": "Malay States",
-    "location": "S. of Vietnam / Thailand",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Morocco",
-    "dateofchange": "1956",
-    "formername": "French West Africa (part), Morocco",
-    "location": "NW. Africa",
-    "lat": 
-    "long":
+    "lat": 7.432033,
+    "long":-1.047117
   },
   {
     "newname": "Sudan",
     "dateofchange": "1956",
     "formername": "Anglo-Egyptian Sudan",
     "location": "S. of Egypt",
-    "lat": 
-    "long":
+    "lat":15.361765,
+    "long":30.373782
   },
   {
-    "newname": "Tunisia",
-    "dateofchange": "1956",
-    "formername": "French West Africa (part), Tunisia",
-    "location": "N. African coast",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Vietnam, North",
+    "newname": " South Vietnam",
     "dateofchange": "1954",
-    "formername": "Vietnam *",
+    "formername": "Vietnam",
     "location": "S. of China",
-    "lat": 
-    "long":
+    "lat":10.453319,
+    "long":106.037803,
+    "secondary":true
   },
   {
-    "newname": "Vietnam, South",
-    "dateofchange": "1954",
-    "formername": "Vietnam *",
-    "location": "S. of China",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Korea, North",
+    "newname": "North Korea",
     "dateofchange": "1953",
     "formername": "Korea",
     "location": "W. of Japan, E. of China",
-    "lat": 
-    "long":
+    "lat":39.792556,
+    "long":126.725505
   },
   {
-    "newname": "Korea, South",
-    "dateofchange": "1953",
-    "formername": "Korea",
-    "location": "W. of Japan, E. of China",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Ethiopia *",
+    "newname": "Ethiopia",
     "dateofchange": "1952",
-    "formername": "Ethiopia, Eritrea unify",
+    "formername": "Ethiopia and Eritrea",
     "location": "S. end of Red Sea",
-    "lat": 
-    "long":
+    "lat": 13.902199,
+    "long":38.768581,
+    "secondary":true
   },
   {
     "newname": "Cambodia",
     "dateofchange": "1949",
     "formername": "French Indo-China",
     "location": "betw. Vietnam / Thailand",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Germany, East",
-    "dateofchange": "1949",
-    "formername": "Germany *",
-    "location": "northern Europe",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Germany, West",
-    "dateofchange": "1949",
-    "formername": "Germany *",
-    "location": "northern Europe",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Indonesia",
-    "dateofchange": "1949",
-    "formername": "Netherland Indies",
-    "location": "N.-NW. of Australia",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Laos",
-    "dateofchange": "1949",
-    "formername": "French Indo-China",
-    "location": "betw. Vietnam / Thailand",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Thailand * ",
-    "dateofchange": "1949",
-    "formername": "Siam *",
-    "location": "SE. of Burma",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Vietnam *",
-    "dateofchange": "1949",
-    "formername": "French Indo-China",
-    "location": "S. of China",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Israel",
-    "dateofchange": "1948",
-    "formername": "Palestine (part)",
-    "location": "betw. Syria / Egypt",
-    "lat": 
-    "long":
+    "lat":12.445274,
+    "long":105.075488
   },
   {
     "newname": "Sri Lanka",
     "dateofchange": "1948",
     "formername": "Ceylon",
     "location": "isle S. of India",
-    "lat": 
-    "long":
+    "lat":7.294101,
+    "long":80.674809
   },
   {
     "newname": "Pakistan",
     "dateofchange": "1947",
     "formername": "Baluchistan",
     "location": "W. of India",
-    "lat": 
-    "long":
+    "lat":28.904296,
+    "long":67.871303
   },
   {
     "newname": "Jordan",
     "dateofchange": "1946",
     "formername": "Trans Jordan ",
     "location": "E. of Israel",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Philippines",
-    "dateofchange": "1946",
-    "formername": "Philippine Islands",
-    "location": "SE. of China",
-    "lat": 
-    "long":
+    "lat":31.183224,
+    "long":36.261471
   },
   {
     "newname": "Korea",
     "dateofchange": "1945",
-    "formername": "Chosen (Jap.) ",
+    "formername": "Chosen (Japan) ",
     "location": "W. of Japan, E. of China",
-    "lat": 
-    "long":
+    "lat":37.453598,
+    "long":128.053415
   },
   {
-    "newname": "Siam *",
-    "dateofchange": "1945",
-    "formername": "Thailand *",
-    "location": "SE. of Burma",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Eritrea *",
+    "newname": "Ethiopia",
     "dateofchange": "1941",
-    "formername": "Italian East Africa (part), Eritrea",
-    "location": "N. of Ethiopia, S. end of Red Sea",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Ethiopia *",
-    "dateofchange": "1941",
-    "formername": "Italian East Africa (part), Ethiopia",
+    "formername": "Italian East Africa",
     "location": "far E. (Horn of ) Africa",
-    "lat": 
-    "long":
+    "lat":7.542762,
+    "long":41.055403
   },
   {
-    "newname": "Lithuania*",
-    "dateofchange": "1940",
-    "formername": "Lithuanian S.S.R. ",
-    "location": "NE. Europe ",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Latvia *",
-    "dateofchange": "1940",
-    "formername": "Latvian S.S.R. ",
-    "location": "NE. Europe",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Estonia *",
-    "dateofchange": "1940",
-    "formername": "Estonian S.S.R.",
-    "location": "NE. Europe",
-    "lat": 
-    "long":
-  },
-  {
-    "newname": "Thailand *",
+    "newname": "Thailand",
     "dateofchange": "1939",
-    "formername": "Siam *",
+    "formername": "Siam",
     "location": "SE. of Burma",
-    "lat": 
-    "long":
+    "lat":15.184988,
+    "long":100.619252
   }
 ]
