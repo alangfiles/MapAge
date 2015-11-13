@@ -30,9 +30,25 @@
             .button{
                 font-size:1em;
             }
+            #done{
+              display:none;
+              background-color:#CD5555;
+              position:fixed;
+              top:0;
+              left:0;
+              height:100vh;
+              width:100vw;
+            }
+            #map-age-message{
+              font-size:2em;
+            }
         </style>
     </head>
     <body>
+        <div id="done">
+          <div id="map-age-message"></div>
+          <button>Reset</button>
+        </div>
         <div id="map"></div>
         <div id="question">
             <p>What country is this?</p>
@@ -40,48 +56,74 @@
             <button id='oldCountry' class="button"></button>
         </div>
         <script>
-            //initialize map
+//initialize map
             var map = L.map('map').setView([0,0], 2);
             L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
-
-            var midpoint = Math.floor(changes.length/2);
-            var currentSpot;
-            var potentialDate = "";
             var currentMarker;
 
-            updatePoint(true);
+            var newestMap = 0;
+            var oldestMap = 10000; 
+            changes.reduce(function(prev,cur,index,array){
+                newestMap = newestMap < cur.dateofchange ? cur.dateofchange : newestMap;  
+                oldestMap = oldestMap > cur.dateofchange ? cur.dateofchange : oldestMap;
+            });
+            var currentSpot = changes[Math.floor(changes.length/2)]; //setting an inital point
 
-            $("#newCountry").click(function(){
-                updatePoint(false);
+            $("#newCountry").click(function(){ 
+                var mapIsOlder = false; 
+                updatePoint(mapIsOlder);
             });
             $("#oldCountry").click(function(){
+                var mapIsOlder = true; 
                 updatePoint(true);
             });
 
-            function updatePoint(useUpperRange){
-                if(useUpperRange){
-                    //midpoint = midpoint + Math.floor(locations.length/2);
-                    midpoint--;
-                }else{
-                    //midpoint = Math.floor(midpoint/2);
-                    midpoint++;
+            function updatePoint(mapIsOlder){
+                //check if we're done!
+                if(foundMapAge()){
+                  //we're done!
+                  $("#map-age-message").html("Your map was made between "+oldestMap+" and "+newestMap"!");
+                  $("#done").show();
                 }
-                if(currentSpot){
-                    potentialDate = currentSpot.dateofchange;
-                }
-                currentSpot = changes[midpoint];
+                else{
+                  //we're not done
+                  if(mapIsOlder){//then the youngest it can be is the current map age.
+                      newestMap = currentSpot.dateofchange;
+                  }
+                  else{//then the oldest it can be is the current map age.
+                      oldestMap = currentSpot.dateofchange;
+                  }
+                  currentSpot = getNewChangePoint();
 
-                $("#newCountry").html(currentSpot.newname);
-                $("#oldCountry").html(currentSpot.formername);
-                map.panTo([currentSpot.lat, currentSpot.long]);
-                if(currentMarker){
-                    map.removeLayer(currentMarker);
-                }
-                currentMarker = new L.marker([currentSpot.lat, currentSpot.long]).addTo(map);
+                  //updateMap
+                  updateMap(currentSpot);
+                  
+                }                
             }
 
+            function updateMap(spot){
+              $("#newCountry").html(spot.newname);
+              $("#oldCountry").html(spot.formername);
+              map.panTo([spot.lat, spot.long]);
+              if(currentMarker){
+                  map.removeLayer(currentMarker);
+              }
+              currentMarker = new L.marker([spot.lat, spot.long]).addTo(map);
+            }
+
+            function foundMapAge(){
+              if( changes.filter(function(e){ if(e.dateofchange < newestMap && e.dateofchange > oldestMap){return e}}).length == 0){
+                return true;
+              }
+              return false;
+            }
+
+            function getNewChangePoint(){
+              var availablePoints = changes.filter(function(e){ if(e.dateofchange < newestMap && e.dateofchange > oldestMap){return e}});
+              return availablePoints[Math.floor(availablePoints.length/2)];
+            }
         </script>
     </body>
 </html>
