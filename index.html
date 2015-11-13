@@ -51,7 +51,7 @@
     <body>
         <div id="done">
           <div id="map-age-message"></div>
-          <button>Reset</button>
+          <button onclick="initializeMapAge()">Reset</button>
         </div>
         <div id="map"></div>
         <div id="question">
@@ -66,15 +66,11 @@
                 attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
             var currentMarker;
+            var newestMap;
+            var oldestMap; 
+            var currentSpot;
 
-            var newestMap = 0;
-            var oldestMap = 10000; 
-            changes.reduce(function(prev,cur,index,array){
-                newestMap = newestMap < cur.dateofchange ? cur.dateofchange : newestMap;  
-                oldestMap = oldestMap > cur.dateofchange ? cur.dateofchange : oldestMap;
-            });
-            var currentSpot = changes[Math.floor(changes.length/2)]; //setting an inital point
-            updateMap(currentSpot);
+            initializeMapAge();
 
             $("#newCountry").click(function(){ 
                 var mapIsOlder = false; 
@@ -128,6 +124,18 @@
             function getNewChangePoint(){
               var availablePoints = changes.filter(function(e){ if(e.dateofchange < newestMap && e.dateofchange > oldestMap){return e}});
               return availablePoints[Math.floor(availablePoints.length/2)];
+            }
+
+            function initializeMapAge(){
+              newestMap = 0;
+              oldestMap = 10000; 
+              changes.reduce(function(prev,cur,index,array){
+                newestMap = newestMap < cur.dateofchange ? cur.dateofchange : newestMap;  
+                oldestMap = oldestMap > cur.dateofchange ? cur.dateofchange : oldestMap;
+              });
+
+              currentSpot = changes[Math.floor(changes.length/2)]; //setting an inital point
+              updateMap(currentSpot);
             }
         </script>
     </body>
