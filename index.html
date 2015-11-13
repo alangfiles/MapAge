@@ -82,7 +82,15 @@
             });
 
             function updatePoint(mapIsOlder){
-                //check if we're done!
+                //update Map Ages
+                if(mapIsOlder){//then the youngest it can be is the current map age.
+                    newestMap = currentSpot.dateofchange;
+                }
+                else{//then the oldest it can be is the current map age.
+                    oldestMap = currentSpot.dateofchange;
+                }
+
+                //check if we're done 
                 if(foundMapAge()){
                   //we're done!
                   $("#map-age-message").html("Your map was made between "+oldestMap+" and "+newestMap+"!");
@@ -90,17 +98,9 @@
                 }
                 else{
                   //we're not done
-                  if(mapIsOlder){//then the youngest it can be is the current map age.
-                      newestMap = currentSpot.dateofchange;
-                  }
-                  else{//then the oldest it can be is the current map age.
-                      oldestMap = currentSpot.dateofchange;
-                  }
                   currentSpot = getNewChangePoint();
-
                   //updateMap
                   updateMap(currentSpot);
-                  
                 }                
             }
 
