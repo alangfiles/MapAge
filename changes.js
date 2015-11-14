@@ -75,7 +75,7 @@ var changes = [
   {
     "newname": "St. Kitts &amp; Nevis",
     "dateofchange": "1983",
-    "formername": "Leeward Is. (Br.)",
+    "formername": "Leeward Is. (Britian)",
     "location": "isles in W. Indies, above Venezuela",
     "lat":17.244067,
     "long":-62.706437
@@ -99,7 +99,7 @@ var changes = [
   {
     "newname": "Kiribati",
     "dateofchange": "1979",
-    "formername": "Gilbert Is. &amp; Phoenix Is. (Br.)",
+    "formername": "Gilbert Is. &amp; Phoenix Is. (Britian)",
     "location": "Pacific Ocean at the Equator",
     "lat": 1.846893,
     "long":-157.380367
@@ -107,7 +107,7 @@ var changes = [
   {
     "newname": "Tuvalu",
     "dateofchange": "1978",
-    "formername": "Ellice Is. (Br.)",
+    "formername": "Ellice Is. (Britian)",
     "location": "S. Pacific, W. of Intern.Dateline",
     "lat": -8.139274,
     "long":178.980621

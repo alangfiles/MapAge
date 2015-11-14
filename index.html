@@ -43,7 +43,6 @@
               padding-top: 30vh;
             }
             #map-age-message{
-              font-size:3em;
               padding:30px;
             }
         </style>
@@ -58,6 +57,7 @@
             <p>What country is this?</p>
             <button id='newCountry' class="button"></button>
             <button id='oldCountry' class="button"></button>
+            <button id='removeEntry' class="button">I Don't Know</button>
         </div>
         <script>
 //initialize map
@@ -69,31 +69,45 @@
             var newestMap;
             var oldestMap; 
             var currentSpot;
+            var localListOfChanges;
 
             initializeMapAge();
 
             $("#newCountry").click(function(){ 
                 var mapIsOlder = false; 
-                updatePoint(mapIsOlder);
+                updatePoint(mapIsOlder, false);
             });
             $("#oldCountry").click(function(){
                 var mapIsOlder = true; 
-                updatePoint(true);
+                updatePoint(mapIsOlder, false);
+            });
+            $("#removeEntry").click(function(){
+                localListOfChanges.splice(localListOfChanges.indexOf(currentSpot),1);
+                updatePoint(false, true);
             });
 
-            function updatePoint(mapIsOlder){
+            function updatePoint(mapIsOlder, skipPoint){
                 //update Map Ages
-                if(mapIsOlder){//then the youngest it can be is the current map age.
-                    newestMap = currentSpot.dateofchange;
-                }
-                else{//then the oldest it can be is the current map age.
-                    oldestMap = currentSpot.dateofchange;
+                if(!skipPoint){
+                    if(mapIsOlder){//then the youngest it can be is the current map age.
+                        newestMap = currentSpot.dateofchange;
+                    }
+                    else{//then the oldest it can be is the current map age.
+                        oldestMap = currentSpot.dateofchange;
+                    }
                 }
 
                 //check if we're done 
                 if(foundMapAge()){
                   //we're done!
-                  $("#map-age-message").html("Your map was made between "+oldestMap+" and "+newestMap+"!");
+                  $("#map-age-message").html("<h1>Your map was made between "+oldestMap+" and "+newestMap+"!</h1>");
+                  
+                  var lastChange = localListOfChanges.filter(function(e){ if(e.dateofchange == oldestMap){return e}})[0];
+                  var nextChange = localListOfChanges.filter(function(e){ if(e.dateofchange == newestMap){return e}})[0];
+                    
+                  $("#map-age-message").append("<h3>"+lastChange.formername+" had become "+lastChange.newname+".</h3>");
+                  $("#map-age-message").append("<h3>But "+nextChange.newname+" was still "+nextChange.formername+"</h3>");
+                  
                   $("#done").show();
                 }
                 else{
@@ -115,26 +129,28 @@
             }
 
             function foundMapAge(){
-              if( changes.filter(function(e){ if(e.dateofchange < newestMap && e.dateofchange > oldestMap){return e}}).length == 0){
+              if( localListOfChanges.filter(function(e){ if(e.dateofchange < newestMap && e.dateofchange > oldestMap){return e}}).length == 0){
                 return true;
               }
               return false;
             }
 
             function getNewChangePoint(){
-              var availablePoints = changes.filter(function(e){ if(e.dateofchange < newestMap && e.dateofchange > oldestMap){return e}});
+              var availablePoints = localListOfChanges.filter(function(e){ if(e.dateofchange < newestMap && e.dateofchange > oldestMap){return e}});
               return availablePoints[Math.floor(availablePoints.length/2)];
             }
 
             function initializeMapAge(){
+              $("#done").hide();
+              localListOfChanges = changes;
               newestMap = 0;
               oldestMap = 10000; 
-              changes.reduce(function(prev,cur,index,array){
+              localListOfChanges.reduce(function(prev,cur,index,array){
                 newestMap = newestMap < cur.dateofchange ? cur.dateofchange : newestMap;  
                 oldestMap = oldestMap > cur.dateofchange ? cur.dateofchange : oldestMap;
               });
 
-              currentSpot = changes[Math.floor(changes.length/2)]; //setting an inital point
+              currentSpot = localListOfChanges[Math.floor(localListOfChanges.length/2)]; //setting an inital point
               updateMap(currentSpot);
             }
         </script>
