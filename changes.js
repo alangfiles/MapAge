@@ -24,9 +24,9 @@ var changes = [
     "long":123.899
   },
   {
-    "newname": "Congo, Dem. Repub. Of *",
+    "newname": "Dem. Repub. Of Congo",
     "dateofchange": "1997",
-    "formername": "Zaire *",
+    "formername": "Zaire",
     "location": "Central Africa",
     "lat":-0.813079,
     "long":23.332549,
@@ -57,9 +57,9 @@ var changes = [
     "long":38.487790
   },
   {
-    "newname": "Germany *",
+    "newname": "Germany",
     "dateofchange": "1990",
-    "formername": "East Germany, West Germany unify",
+    "formername": "East Germany and West Germany",
     "location": "northern Europe",
     "lat":51.181680,
     "long":8.275495
@@ -169,18 +169,9 @@ var changes = [
     "long":51.201430
   },
   {
-    "newname": "Zaire",
-    "dateofchange": "1971",
-    "formername": "Congo, Dem. Repub. Of",
-    "location": "central Africa, straddles Equator",
-    "lat":-1.721158,
-    "long":24.224296,
-    'questionable':true
-  },
-  {
     "newname": "Fiji",
     "dateofchange": "1970",
-    "formername": "Fiji Is. (Br.)",
+    "formername": "Fiji Islands (British)",
     "location": "S. Pacific, W. of Intern.Dateline",
     "lat": -17.845575,
     "long":177.874353
@@ -194,7 +185,7 @@ var changes = [
     "long":9.775832
   },
   {
-    "newname": "South Yemen",
+    "newname": "Yemen or South Yemen",
     "dateofchange": "1967",
     "formername": "Hadhramaut or Aden British Protectorate",
     "location": "S. end of Red Sea",
@@ -210,14 +201,15 @@ var changes = [
     "lat": -21.522635,
     "long":24.048943
   },
-  {
-    "newname": "Rhodesia",
-    "dateofchange": "1965",
-    "formername": "Southern Rhodesia",
-    "location": "SE. Africa",
-    "lat": -20.782197,
-    "long":30.355025
-  },
+//  {
+//    "newname": "Rhodesia",
+//    "dateofchange": "1965",
+//    "formername": "Southern Rhodesia",
+//    "location": "SE. Africa",
+//    "lat": -20.782197,
+//    "long":30.355025,
+//    "questionable":true,
+//  },
   {
     "newname": "Tanzania",
     "dateofchange": "1964",
@@ -274,15 +266,15 @@ var changes = [
     "lat":15.361765,
     "long":30.373782
   },
-  {
-    "newname": " South Vietnam",
-    "dateofchange": "1954",
-    "formername": "Vietnam",
-    "location": "S. of China",
-    "lat":10.453319,
-    "long":106.037803,
-    "secondary":true
-  },
+//  {
+//    "newname": " South Vietnam",
+//    "dateofchange": "1954",
+//    "formername": "Vietnam",
+//    "location": "S. of China",
+//    "lat":10.453319,
+//    "long":106.037803,
+//    "secondary":true
+//  },
   {
     "newname": "North Korea",
     "dateofchange": "1953",
@@ -291,15 +283,15 @@ var changes = [
     "lat":39.792556,
     "long":126.725505
   },
-  {
-    "newname": "Ethiopia",
-    "dateofchange": "1952",
-    "formername": "Ethiopia and Eritrea",
-    "location": "S. end of Red Sea",
-    "lat": 13.902199,
-    "long":38.768581,
-    "secondary":true
-  },
+//  {
+//    "newname": "Ethiopia",
+//    "dateofchange": "1952",
+//    "formername": "Ethiopia and Eritrea",
+//    "location": "S. end of Red Sea",
+//    "lat": 13.902199,
+//    "long":38.768581,
+//    "secondary":true
+//  },
   {
     "newname": "Cambodia",
     "dateofchange": "1949",
