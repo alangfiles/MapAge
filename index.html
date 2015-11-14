@@ -38,16 +38,20 @@
               left:0;
               height:100vh;
               width:100vw;
+              z-index: 1000;
+              text-align: center;
+              padding-top: 30vh;
             }
             #map-age-message{
-              font-size:2em;
+              font-size:3em;
+              padding:30px;
             }
         </style>
     </head>
     <body>
         <div id="done">
           <div id="map-age-message"></div>
-          <button>Reset</button>
+          <button onclick="initializeMapAge()">Reset</button>
         </div>
         <div id="map"></div>
         <div id="question">
@@ -62,14 +66,11 @@
                 attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
             var currentMarker;
+            var newestMap;
+            var oldestMap; 
+            var currentSpot;
 
-            var newestMap = 0;
-            var oldestMap = 10000; 
-            changes.reduce(function(prev,cur,index,array){
-                newestMap = newestMap < cur.dateofchange ? cur.dateofchange : newestMap;  
-                oldestMap = oldestMap > cur.dateofchange ? cur.dateofchange : oldestMap;
-            });
-            var currentSpot = changes[Math.floor(changes.length/2)]; //setting an inital point
+            initializeMapAge();
 
             $("#newCountry").click(function(){ 
                 var mapIsOlder = false; 
@@ -81,25 +82,25 @@
             });
 
             function updatePoint(mapIsOlder){
-                //check if we're done!
+                //update Map Ages
+                if(mapIsOlder){//then the youngest it can be is the current map age.
+                    newestMap = currentSpot.dateofchange;
+                }
+                else{//then the oldest it can be is the current map age.
+                    oldestMap = currentSpot.dateofchange;
+                }
+
+                //check if we're done 
                 if(foundMapAge()){
                   //we're done!
-                  $("#map-age-message").html("Your map was made between "+oldestMap+" and "+newestMap"!");
+                  $("#map-age-message").html("Your map was made between "+oldestMap+" and "+newestMap+"!");
                   $("#done").show();
                 }
                 else{
                   //we're not done
-                  if(mapIsOlder){//then the youngest it can be is the current map age.
-                      newestMap = currentSpot.dateofchange;
-                  }
-                  else{//then the oldest it can be is the current map age.
-                      oldestMap = currentSpot.dateofchange;
-                  }
                   currentSpot = getNewChangePoint();
-
                   //updateMap
                   updateMap(currentSpot);
-                  
                 }                
             }
 
@@ -123,6 +124,18 @@
             function getNewChangePoint(){
               var availablePoints = changes.filter(function(e){ if(e.dateofchange < newestMap && e.dateofchange > oldestMap){return e}});
               return availablePoints[Math.floor(availablePoints.length/2)];
+            }
+
+            function initializeMapAge(){
+              newestMap = 0;
+              oldestMap = 10000; 
+              changes.reduce(function(prev,cur,index,array){
+                newestMap = newestMap < cur.dateofchange ? cur.dateofchange : newestMap;  
+                oldestMap = oldestMap > cur.dateofchange ? cur.dateofchange : oldestMap;
+              });
+
+              currentSpot = changes[Math.floor(changes.length/2)]; //setting an inital point
+              updateMap(currentSpot);
             }
         </script>
     </body>
